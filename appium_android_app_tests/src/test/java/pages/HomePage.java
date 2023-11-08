@@ -1,23 +1,16 @@
 package pages;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import utils.Helper;
 
-import java.time.Duration;
 import java.util.List;
 
 
-public class MainPage {
+public class HomePage {
 
     @FindBy (id = "sidedrawer")
     public WebElement menuButton;
@@ -63,11 +56,11 @@ public class MainPage {
 
     @FindBy (xpath = "//androidx.recyclerview.widget.RecyclerView[@resource-id='com.phptravelsnative:id/recyclerViewFeaturedCars']/android.widget.LinearLayout")
     public List<WebElement> featuredCarList;
-    public MainPage(AndroidDriver driver) {
+    public HomePage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void checkPageElements(AndroidDriver driver, TouchAction touchAction){
+    public void checkPageElements(AndroidDriver driver){
 
         Assert.assertTrue(menuButton.isDisplayed());
         Assert.assertTrue(welcomeHeader.isDisplayed());
@@ -81,7 +74,6 @@ public class MainPage {
         System.out.println(featuredHotelList.size());
         Assert.assertTrue(flightsListHeader.isDisplayed());
         //Assert.assertEquals(driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\""+"Lahore"+"\").instance(0))").getText(), "Lahore");
-        swipeVertical(200,1000, touchAction);
         //Assert.assertTrue(!featuredFlightList.isEmpty());
         Assert.assertEquals(driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\""+"Featured Tours"+"\").instance(0))").getText(), "Featured Tours");
         Assert.assertTrue(!featuredTourList.isEmpty());
