@@ -28,6 +28,9 @@ public class MenuPage {
     @FindBy(id = "setting")
     public WebElement settingsButton;
 
+    @FindBy(id = "setting")
+    public WebElement greyBackground;
+
     public MenuPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
