@@ -1,7 +1,5 @@
 package tests;
 
-import io.appium.java_client.Setting;
-import io.appium.java_client.TouchAction;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -27,8 +25,8 @@ public class MenuTest extends BaseTest {
         menuPage.checkPageElements();
         menuPage.loginAndRegisterButton.click();
 
-        LoginAndRegisterPage loginAndRegisterPage = new LoginAndRegisterPage(driver);
-        loginAndRegisterPage.checkPageElements();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.checkPageElements();
     }
 
     @Test

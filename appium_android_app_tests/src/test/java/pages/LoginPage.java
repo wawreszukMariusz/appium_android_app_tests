@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class LoginAndRegisterPage {
+public class LoginPage {
 
     @FindBy(id = "input_email")
     public WebElement emailInput;
@@ -26,7 +26,7 @@ public class LoginAndRegisterPage {
     @FindBy(id = "link_signup")
     public WebElement signUpButton;
 
-    public LoginAndRegisterPage(AndroidDriver driver) {
+    public LoginPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
