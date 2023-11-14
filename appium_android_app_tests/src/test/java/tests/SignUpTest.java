@@ -1,6 +1,4 @@
 package tests;
-
-import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -11,9 +9,9 @@ import utils.Helper;
 public class SignUpTest extends BaseTest {
 
     @Test
-    public void properSignUpTest() throws InterruptedException {
+    public void properSignUpTest() {
         HomePage homePage = new HomePage(driver);
-        //homePage.checkPageElements(driver);
+        homePage.checkPageElements(driver);
         homePage.menuButton.click();
 
         MenuPage menuPage = new MenuPage(driver);
@@ -52,7 +50,5 @@ public class SignUpTest extends BaseTest {
         signUpPage.signUpButton.click();
 
     }
-
-
 
 }
